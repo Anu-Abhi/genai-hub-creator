@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { PlayIcon, Code, FileText, Image } from 'lucide-react';
+import { FileText, Users, ClipboardList, GitCompare } from 'lucide-react';
 
 const PlaygroundSection = () => {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Interactive AI Playground</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Interactive SDLC Workspace</h2>
           <p className="text-lg text-muted-foreground max-w-[800px]">
-            Experiment with our AI models in real-time. Test different prompts, adjust parameters, and see the results instantly.
+            Experience AI-powered tools for every phase of your software development lifecycle. Generate requirements, create user stories, and build test cases in real-time.
           </p>
         </div>
         
@@ -23,103 +23,133 @@ const PlaygroundSection = () => {
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-medium">Try it yourself</h3>
                 <Button size="sm" variant="outline" className="gap-1">
-                  <PlayIcon className="h-4 w-4" /> Run
+                  Generate
                 </Button>
               </div>
               
-              <Tabs defaultValue="code" className="w-full">
+              <Tabs defaultValue="brd" className="w-full">
                 <TabsList className="mb-4">
-                  <TabsTrigger value="code" className="flex items-center gap-1">
-                    <Code className="h-4 w-4" /> Code
+                  <TabsTrigger value="brd" className="flex items-center gap-1">
+                    <FileText className="h-4 w-4" /> BRD
                   </TabsTrigger>
-                  <TabsTrigger value="text" className="flex items-center gap-1">
-                    <FileText className="h-4 w-4" /> Text
+                  <TabsTrigger value="stories" className="flex items-center gap-1">
+                    <Users className="h-4 w-4" /> User Stories
                   </TabsTrigger>
-                  <TabsTrigger value="image" className="flex items-center gap-1">
-                    <Image className="h-4 w-4" /> Image
+                  <TabsTrigger value="tests" className="flex items-center gap-1">
+                    <ClipboardList className="h-4 w-4" /> Test Cases
+                  </TabsTrigger>
+                  <TabsTrigger value="reverse" className="flex items-center gap-1">
+                    <GitCompare className="h-4 w-4" /> Reverse Eng.
                   </TabsTrigger>
                 </TabsList>
                 
-                <TabsContent value="code" className="mt-0">
+                <TabsContent value="brd" className="mt-0">
                   <div className="rounded-md border bg-muted/50 p-4">
                     <textarea 
                       className="w-full h-32 bg-transparent resize-none focus:outline-none" 
-                      placeholder="Enter your prompt here... (e.g., 'Create a React function to fetch and display user data from an API')"
+                      placeholder="Upload a meeting recording or describe the system requirements here... (e.g., 'Create a BRD for a customer relationship management system')"
                     ></textarea>
                     
                     <div className="mt-4 flex flex-wrap gap-2">
                       <div className="flex items-center text-sm gap-2">
                         <label className="text-muted-foreground">Model:</label>
                         <select className="bg-background border rounded px-2 py-1 text-sm">
-                          <option>CodeWizard v2.5</option>
-                          <option>FullStackGenius v3.0</option>
-                          <option>TestCraftAI v2.1</option>
+                          <option>RequirementsPro v2.5</option>
+                          <option>BRDMaster v3.0</option>
+                          <option>AnalystAI v2.1</option>
                         </select>
                       </div>
                       
                       <div className="flex items-center text-sm gap-2">
-                        <label className="text-muted-foreground">Language:</label>
+                        <label className="text-muted-foreground">Format:</label>
                         <select className="bg-background border rounded px-2 py-1 text-sm">
-                          <option>TypeScript</option>
-                          <option>JavaScript</option>
-                          <option>Python</option>
-                          <option>Java</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </TabsContent>
-                
-                <TabsContent value="text" className="mt-0">
-                  <div className="rounded-md border bg-muted/50 p-4">
-                    <textarea 
-                      className="w-full h-32 bg-transparent resize-none focus:outline-none" 
-                      placeholder="Enter your prompt here... (e.g., 'Write documentation for a RESTful API that manages user authentication')"
-                    ></textarea>
-                    
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      <div className="flex items-center text-sm gap-2">
-                        <label className="text-muted-foreground">Model:</label>
-                        <select className="bg-background border rounded px-2 py-1 text-sm">
-                          <option>DocuMentor v1.8</option>
-                          <option>TextGenius v2.2</option>
-                        </select>
-                      </div>
-                      
-                      <div className="flex items-center text-sm gap-2">
-                        <label className="text-muted-foreground">Style:</label>
-                        <select className="bg-background border rounded px-2 py-1 text-sm">
+                          <option>Detailed</option>
+                          <option>Executive</option>
                           <option>Technical</option>
-                          <option>Tutorial</option>
-                          <option>Reference</option>
                         </select>
                       </div>
                     </div>
                   </div>
                 </TabsContent>
                 
-                <TabsContent value="image" className="mt-0">
+                <TabsContent value="stories" className="mt-0">
                   <div className="rounded-md border bg-muted/50 p-4">
                     <textarea 
                       className="w-full h-32 bg-transparent resize-none focus:outline-none" 
-                      placeholder="Describe the image you want to generate... (e.g., 'A modern web application dashboard with dark mode UI')"
+                      placeholder="Enter your requirements or BRD summary to generate user stories... (e.g., 'Generate user stories for a customer onboarding process')"
                     ></textarea>
                     
                     <div className="mt-4 flex flex-wrap gap-2">
                       <div className="flex items-center text-sm gap-2">
                         <label className="text-muted-foreground">Model:</label>
                         <select className="bg-background border rounded px-2 py-1 text-sm">
-                          <option>VisionCraft v1.2</option>
-                          <option>UIDreamer v2.0</option>
+                          <option>StoryCreator v1.8</option>
+                          <option>AgileGenius v2.2</option>
                         </select>
                       </div>
                       
                       <div className="flex items-center text-sm gap-2">
-                        <label className="text-muted-foreground">Style:</label>
+                        <label className="text-muted-foreground">Format:</label>
                         <select className="bg-background border rounded px-2 py-1 text-sm">
-                          <option>UI Design</option>
-                          <option>Mockup</option>
-                          <option>Wireframe</option>
+                          <option>JIRA Ready</option>
+                          <option>Detailed</option>
+                          <option>Agile Format</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="tests" className="mt-0">
+                  <div className="rounded-md border bg-muted/50 p-4">
+                    <textarea 
+                      className="w-full h-32 bg-transparent resize-none focus:outline-none" 
+                      placeholder="Enter user stories or requirements to generate test cases... (e.g., 'Generate test cases for user authentication and password reset')"
+                    ></textarea>
+                    
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="flex items-center text-sm gap-2">
+                        <label className="text-muted-foreground">Model:</label>
+                        <select className="bg-background border rounded px-2 py-1 text-sm">
+                          <option>TestCraft v1.2</option>
+                          <option>QAGenius v2.0</option>
+                        </select>
+                      </div>
+                      
+                      <div className="flex items-center text-sm gap-2">
+                        <label className="text-muted-foreground">Type:</label>
+                        <select className="bg-background border rounded px-2 py-1 text-sm">
+                          <option>Functional</option>
+                          <option>Integration</option>
+                          <option>UI/UX</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="reverse" className="mt-0">
+                  <div className="rounded-md border bg-muted/50 p-4">
+                    <textarea 
+                      className="w-full h-32 bg-transparent resize-none focus:outline-none" 
+                      placeholder="Paste code snippets or describe an existing system to generate a BRD through reverse engineering..."
+                    ></textarea>
+                    
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="flex items-center text-sm gap-2">
+                        <label className="text-muted-foreground">Model:</label>
+                        <select className="bg-background border rounded px-2 py-1 text-sm">
+                          <option>CodeToDoc v1.2</option>
+                          <option>ReverseEngineer v2.0</option>
+                        </select>
+                      </div>
+                      
+                      <div className="flex items-center text-sm gap-2">
+                        <label className="text-muted-foreground">Output:</label>
+                        <select className="bg-background border rounded px-2 py-1 text-sm">
+                          <option>Business Requirements</option>
+                          <option>Technical Specs</option>
+                          <option>System Overview</option>
                         </select>
                       </div>
                     </div>
@@ -129,71 +159,55 @@ const PlaygroundSection = () => {
             </div>
             
             <div className="lg:w-1/2 p-6 bg-sidebar text-sidebar-foreground flex flex-col">
-              <h3 className="text-xl font-medium mb-4">Results</h3>
+              <h3 className="text-xl font-medium mb-4">Generated Content</h3>
               
               <div className="flex-grow rounded-md p-4 text-sm font-mono overflow-auto bg-sidebar-accent text-sidebar-accent-foreground">
-                <pre>{`// Generated React component to fetch and display user data
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Spinner } from './ui/spinner';
+                <pre>{`# Business Requirements Document: CRM System
 
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  role: string;
-}
+## 1. Introduction
+This document outlines the business requirements for a new Customer Relationship Management (CRM) system designed to enhance customer interaction and streamline sales processes.
 
-export const UserDisplay = () => {
-  const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+## 2. Stakeholders
+- Sales Department
+- Marketing Team
+- Customer Support
+- Executive Leadership
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch('/api/users');
-        if (!response.ok) {
-          throw new Error('Failed to fetch users');
-        }
-        const data = await response.json();
-        setUsers(data);
-        setLoading(false);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
+## 3. Business Objectives
+- Improve customer retention by 15%
+- Reduce sales cycle time by 25%
+- Consolidate customer interaction data
+- Enable data-driven marketing decisions
 
-    fetchUsers();
-  }, []);
+## 4. Functional Requirements
+1. Contact Management
+   - Store customer profiles with contact history
+   - Segment customers by various attributes
+   - Track relationship history
+   
+2. Sales Pipeline Management
+   - Visual representation of sales stages
+   - Deal tracking and forecasting
+   - Automated follow-up reminders
 
-  if (loading) return <Spinner />;
-  if (error) return <div>Error: {error}</div>;
+3. Reporting & Analytics
+   - Customizable dashboards
+   - Performance reports by rep, region, product
+   - Trend analysis for decision support
 
-  return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {users.map((user) => (
-        <Card key={user.id}>
-          <CardHeader>
-            <CardTitle>{user.name}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{user.email}</p>
-            <p className="text-sm text-muted-foreground">
-              Role: {user.role}
-            </p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-};`}</pre>
+## 5. Integration Requirements
+- Email system integration
+- Marketing automation tools
+- Support ticket system
+- ERP and accounting software
+
+## 6. User Stories Generated: 15
+## 7. Test Cases Generated: 32`}</pre>
               </div>
               
               <div className="mt-4 flex justify-between">
                 <Button variant="outline" size="sm">Copy</Button>
-                <Button variant="secondary" size="sm">Save to Collection</Button>
+                <Button variant="secondary" size="sm">Export to JIRA</Button>
               </div>
             </div>
           </div>
@@ -202,7 +216,7 @@ export const UserDisplay = () => {
         <div className="mt-8 text-center">
           <Button asChild className="gap-2">
             <Link to="/playground">
-              Open Full Playground <ArrowRight className="h-4 w-4" />
+              Open Full Workspace <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>

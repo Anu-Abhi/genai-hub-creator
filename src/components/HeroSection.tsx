@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Sparkles, Brain } from 'lucide-react';
+import { ArrowRight, FileText, Users, ClipboardList } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -16,11 +16,11 @@ const HeroSection = () => {
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex flex-col gap-4 animate-fade-in">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-              Supercharge Your Development with <span className="gradient-text">GenAI</span>
+              Transform Your SDLC with <span className="gradient-text">AI</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-[600px]">
-              Access powerful AI models, tools, and APIs to accelerate your software development. 
-              Build smarter applications with less code and more innovation.
+              Empower every team member in your software development lifecycle with AI tools 
+              for business analysis, requirements gathering, user story creation, and test case generation.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-4">
               <Button size="lg" className="gap-2">
@@ -34,16 +34,16 @@ const HeroSection = () => {
             <div className="flex items-center gap-2 mt-6 text-sm text-muted-foreground">
               <div className="flex -space-x-2">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Code className="h-4 w-4 text-primary" />
+                  <FileText className="h-4 w-4 text-primary" />
                 </div>
                 <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <Brain className="h-4 w-4 text-secondary" />
+                  <Users className="h-4 w-4 text-secondary" />
                 </div>
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Sparkles className="h-4 w-4 text-primary" />
+                  <ClipboardList className="h-4 w-4 text-primary" />
                 </div>
               </div>
-              <span>Trusted by 1000+ developers worldwide</span>
+              <span>Trusted by 1000+ teams worldwide</span>
             </div>
           </div>
           
@@ -54,25 +54,26 @@ const HeroSection = () => {
                   <div className="w-3 h-3 rounded-full bg-destructive"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  <span className="text-xs text-muted-foreground ml-2">code-generator.ts</span>
+                  <span className="text-xs text-muted-foreground ml-2">brd-generator.ai</span>
                 </div>
                 <pre className="text-xs sm:text-sm overflow-x-auto text-left text-white">
-                  <code>{`import { genAI } from '@genai-hub/core';
+                  <code>{`import { sdlcAI } from '@sdlc-ai-hub/core';
 
-// Initialize the AI code generator
-const codeGen = genAI.createGenerator({
-  model: 'code-wizard-v2',
-  temperature: 0.7,
+// Initialize the BRD generator
+const brdGen = sdlcAI.createGenerator({
+  model: 'requirements-pro-v2',
+  format: 'detailed',
 });
 
-// Generate a React component
-const result = await codeGen.generateCode({
-  prompt: 'Create a responsive navbar',
-  language: 'typescript',
-  framework: 'react'
+// Generate a Business Requirements Document
+const result = await brdGen.generateBRD({
+  source: 'team-meeting-recording.mp4',
+  projectType: 'enterprise',
+  includeUserStories: true,
+  jiraIntegration: true
 });
 
-console.log(result.code);`}</code>
+console.log(result.summary);`}</code>
                 </pre>
               </div>
             </div>
