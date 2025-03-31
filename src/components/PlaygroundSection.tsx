@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -199,8 +200,10 @@ export const UserDisplay = () => {
         </div>
         
         <div className="mt-8 text-center">
-          <Button className="gap-2">
-            Open Full Playground <ArrowRight className="h-4 w-4" />
+          <Button asChild className="gap-2">
+            <Link to="/playground">
+              Open Full Playground <ArrowRight className="h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>
