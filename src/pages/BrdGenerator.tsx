@@ -207,13 +207,13 @@ ${projectDetails.timeline}
             <TabsTrigger value="upload">
               <Upload className="mr-2 h-4 w-4" /> Upload Recording
             </TabsTrigger>
-            <TabsTrigger value="details" disabled={!projectDetails.title}>
+            <TabsTrigger value="details">
               <FileText className="mr-2 h-4 w-4" /> Project Details
             </TabsTrigger>
-            <TabsTrigger value="brd" disabled={!brdContent}>
+            <TabsTrigger value="brd">
               <MessageSquare className="mr-2 h-4 w-4" /> BRD Collaboration
             </TabsTrigger>
-            <TabsTrigger value="stories" disabled={userStories.length === 0}>
+            <TabsTrigger value="stories">
               <CheckCircle className="mr-2 h-4 w-4" /> User Stories
             </TabsTrigger>
           </TabsList>
