@@ -7,7 +7,7 @@ import {
   DropdownMenuItem, 
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
-import { Brain, Menu, Code, FileText, Users, ClipboardList, GitCompare, Database, ChevronDown } from 'lucide-react';
+import { Brain, Menu, FileText, Users, ClipboardList, GitCompare, Database, ChevronDown } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
@@ -35,7 +35,7 @@ const NavBar = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuItem className="flex items-center gap-2" onClick={() => navigate('/playground')}>
+              <DropdownMenuItem className="flex items-center gap-2" onClick={() => navigate('/brd-generator')}>
                 <FileText className="h-4 w-4" /> 
                 <span>BRD Generation</span>
               </DropdownMenuItem>
@@ -63,6 +63,10 @@ const NavBar = () => {
           </Button>
           
           <Button variant="ghost" asChild>
+            <Link to="/brd-generator">BRD Generator</Link>
+          </Button>
+          
+          <Button variant="ghost" asChild>
             <Link to="/playground">Workspace</Link>
           </Button>
           
@@ -74,7 +78,7 @@ const NavBar = () => {
         {/* Auth Buttons */}
         <div className="flex items-center gap-2">
           <Button variant="outline" className="hidden md:flex" onClick={() => navigate('/playground')}>Sign In</Button>
-          <Button onClick={() => navigate('/playground')}>Get Started</Button>
+          <Button onClick={() => navigate('/brd-generator')}>Get Started</Button>
           
           {/* Mobile Menu Button */}
           <Button variant="ghost" size="icon" className="md:hidden">

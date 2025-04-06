@@ -10,6 +10,7 @@ import Models from "./pages/Models";
 import Playground from "./pages/Playground";
 import Docs from "./pages/Docs";
 import NotFound from "./pages/NotFound";
+import BrdGenerator from "./pages/BrdGenerator";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ function App() {
             <Route path="/models" element={<Models />} />
             <Route path="/playground" element={<Playground />} />
             <Route path="/docs" element={<Docs />} />
+            <Route path="/brd-generator" element={<BrdGenerator />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -3,43 +3,51 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FileText, Users, ClipboardList, GitCompare, Database, Brain } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const features = [
   {
     icon: FileText,
     title: 'BRD Generation',
     description: 'Generate comprehensive Business Requirement Documents from team recordings, meetings, or existing system analysis.',
-    persona: 'Business Analysts'
+    persona: 'Business Analysts',
+    link: '/brd-generator'
   },
   {
     icon: Users,
     title: 'User Story Creation',
     description: 'Automatically transform requirements into well-structured user stories following best practices for agile development.',
-    persona: 'Product Owners'
+    persona: 'Product Owners',
+    link: '/playground'
   },
   {
     icon: ClipboardList,
     title: 'Test Case Generation',
     description: 'Create test cases and testing scenarios directly from requirements and user stories for comprehensive QA coverage.',
-    persona: 'QA Engineers'
+    persona: 'QA Engineers',
+    link: '/playground'
   },
   {
     icon: GitCompare,
     title: 'Reverse Engineering',
     description: 'Extract business requirements and logic from existing code to build documentation for legacy systems.',
-    persona: 'Developers'
+    persona: 'Developers',
+    link: '/playground'
   },
   {
     icon: Database,
     title: 'JIRA Integration',
     description: 'Seamlessly push generated user stories, tasks, and epics to JIRA to keep your project management tool up to date.',
-    persona: 'Project Managers'
+    persona: 'Project Managers',
+    link: '/brd-generator'
   },
   {
     icon: Brain,
     title: 'Cross-Role Collaboration',
     description: 'Facilitate collaboration between business analysts, developers, QA engineers, and stakeholders with AI-powered tools.',
-    persona: 'All Team Members'
+    persona: 'All Team Members',
+    link: '/playground'
   }
 ];
 
@@ -54,6 +62,7 @@ const personas = [
 
 const FeaturesSection = () => {
   const [selectedPersona, setSelectedPersona] = React.useState('All Personas');
+  const navigate = useNavigate();
   
   // Filter features based on selected persona
   const filteredFeatures = selectedPersona === 'All Personas' 
@@ -110,22 +119,23 @@ const FeaturesSection = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">{feature.description}</CardDescription>
+                <CardDescription className="text-base mb-4">{feature.description}</CardDescription>
+                <Button 
+                  size="sm" 
+                  className="mt-2" 
+                  onClick={() => navigate(feature.link)}
+                >
+                  Try Now
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <a 
-            href="/playground" 
-            className="inline-flex items-center text-primary font-medium hover:underline"
-          >
-            Try these features in our workspace
-            <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+          <Button onClick={() => navigate('/brd-generator')} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+            Start with BRD Generation
+          </Button>
         </div>
       </div>
     </section>
