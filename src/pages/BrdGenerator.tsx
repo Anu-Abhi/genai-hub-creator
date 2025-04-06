@@ -204,7 +204,7 @@ ${projectDetails.timeline}
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid grid-cols-4 mb-8">
-            <TabsTrigger value="upload" disabled={isUploading || isGenerating}>
+            <TabsTrigger value="upload">
               <Upload className="mr-2 h-4 w-4" /> Upload Recording
             </TabsTrigger>
             <TabsTrigger value="details" disabled={!projectDetails.title}>
